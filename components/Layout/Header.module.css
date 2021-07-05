@@ -1,0 +1,19 @@
+.header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 20px;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+	font-size: 24px;
+	font-weight: 800;
+	color: #333;
+}
+
+.nav {
+	font-size: 18px;
+	font-weight: 600;
+	color: #333;
+}
