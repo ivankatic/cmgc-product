@@ -1,10 +1,14 @@
 .thumb {
 	position: relative;
 	height: 100px;
-	/* width: 100px !important; */
+	width: 100% !important;
 	display: block;
 }
 
 .slider {
 	width: 100%;
+}
+
+.slickOuter {
+	margin-top: 20px;
 }

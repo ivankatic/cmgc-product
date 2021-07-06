@@ -9,13 +9,18 @@
 					"size": "14",
 					"src": [
 						"https://via.placeholder.com/400/0000FF",
-						"https://via.placeholder.com/400/00FFFF"
+						"https://via.placeholder.com/400/00FFFF",
+						"https://via.placeholder.com/400/00FFFF",
+						"https://via.placeholder.com/400/0000FF",
+						"https://via.placeholder.com/400/00FFFF",
+						"https://via.placeholder.com/400/0000FF"
 					]
 				},
 				{
 					"size": "28",
 					"src": [
 						"https://via.placeholder.com/400/00FFFF",
+						"https://via.placeholder.com/400/0000FF",
 						"https://via.placeholder.com/400/00FFFF"
 					]
 				}

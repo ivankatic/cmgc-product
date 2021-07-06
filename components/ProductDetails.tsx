@@ -16,23 +16,23 @@ const ProductDetails: React.FC = () => {
 	// Create state to display image set depending on selected size
 	const [current, setCurrent] = useState(sizes[0]);
 
+	// Change images depending on selected size
 	const sizeHandler = (size: string) => {
 		setCurrent(size);
-
-		const currentSizeInfo = productInfo.sizes.filter((item) => {
-			return item.size === size;
-		});
-
-		setMainImage(currentSizeInfo[0].src[0]);
+		setMainImage(currentSizeInfo(size).src[0]);
 	};
 
 	// Get info for current size
-	const currentSizeInfo = productInfo.sizes.filter((item) => {
-		return item.size === current;
-	});
+	const currentSizeInfo = (size: string) => {
+		const sizeInfo = productInfo.sizes.filter((item) => {
+			return item.size === size;
+		});
+
+		return sizeInfo[0];
+	};
 
 	// Get image set for current size, set main image
-	const imageSet = currentSizeInfo[0].src;
+	const imageSet = currentSizeInfo(current).src;
 	const [mainImage, setMainImage] = useState(imageSet[0]);
 
 	// Change image on thumbnail click
@@ -42,11 +42,12 @@ const ProductDetails: React.FC = () => {
 
 	return (
 		<div className={classes.details}>
-			<div>
+			<div className={classes.left}>
 				<div className={classes.activeImage}>
 					<Image
 						src={mainImage}
 						layout='fill'
+						objectFit='cover'
 						key={imageSet[0]}
 						alt={productInfo.title}
 					/>
@@ -58,8 +59,8 @@ const ProductDetails: React.FC = () => {
 			</div>
 
 			<div>
-				<h1>{productInfo.title}</h1>
-				<p>{productInfo.short_desc}</p>
+				<h1 className={classes.title}>{productInfo.title}</h1>
+				<p className={classes.shortDesc}>{productInfo.short_desc}</p>
 
 				<Dropdown sizes={sizes} onChange={sizeHandler} />
 				<Variations variations={productInfo.scents} />

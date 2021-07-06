@@ -23,9 +23,16 @@ a {
 }
 
 .slick-slide {
+	height: 150px !important;
+	position: relative;
+	box-sizing: border-box;
+	border-left: 2px solid white;
+}
+
+.slick-list {
 	height: 150px;
 }
 
-.slick-slider {
-	height: 150px;
+.slick-track {
+	margin-left: 0 !important;
 }
