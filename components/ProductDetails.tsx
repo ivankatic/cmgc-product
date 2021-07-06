@@ -7,7 +7,7 @@ import Image from 'next/image';
 import { default as data } from '../config/products.json';
 import classes from './ProductDetails.module.scss';
 
-const ProductDetails: React.FC = () => {
+const ProductDetails = () => {
 	const productInfo = data.products[0];
 
 	// Get a list of sizes
@@ -40,6 +40,10 @@ const ProductDetails: React.FC = () => {
 		setMainImage(src);
 	};
 
+	const buyAlert = () => {
+		alert('Lorem ipsum dolor sit amet');
+	};
+
 	return (
 		<div className={classes.details}>
 			<div className={classes.left}>
@@ -65,7 +69,9 @@ const ProductDetails: React.FC = () => {
 				<Dropdown sizes={sizes} onChange={sizeHandler} />
 				<Variations variations={productInfo.scents} />
 
-				<button>Buy Now</button>
+				<button className={classes.buy} onClick={buyAlert}>
+					Buy Now
+				</button>
 
 				<FeatureList features={productInfo.features} />
 			</div>
