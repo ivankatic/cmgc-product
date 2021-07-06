@@ -33,52 +33,6 @@
 				"Sed ligula leo, convallis sit amet erat ultrices, consequat pretium metus.",
 				"Donec a elit risus."
 			]
-		},
-		{
-			"id": "0",
-			"title": "Product 2",
-			"short_desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in volutpat est. Sed nisl est, molestie ut turpis in, aliquet fringilla lectus. Nunc sed nulla eget nisl tincidunt lobortis. Donec cursus sodales sapien quis vestibulum. Fusce efficitur pellentesque est, sit amet tincidunt dolor vehicula varius. Vivamus facilisis pulvinar egestas.",
-			"sizes": [
-				{
-					"size": "14",
-					"src": ["url1", "url2"]
-				},
-				{
-					"size": "28",
-					"src": ["url1", "url2"]
-				}
-			],
-			"scents": ["scent1", "scent2"],
-			"features": [
-				"Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-				"Vestibulum quis sodales enim.",
-				"Duis augue lorem, rutrum nec imperdiet sed, placerat sed nunc.",
-				"Sed ligula leo, convallis sit amet erat ultrices, consequat pretium metus.",
-				"Donec a elit risus."
-			]
-		},
-		{
-			"id": "0",
-			"title": "Product 3",
-			"short_desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in volutpat est. Sed nisl est, molestie ut turpis in, aliquet fringilla lectus. Nunc sed nulla eget nisl tincidunt lobortis. Donec cursus sodales sapien quis vestibulum. Fusce efficitur pellentesque est, sit amet tincidunt dolor vehicula varius. Vivamus facilisis pulvinar egestas.",
-			"sizes": [
-				{
-					"size": "14",
-					"src": ["url1", "url2"]
-				},
-				{
-					"size": "28",
-					"src": ["url1", "url2"]
-				}
-			],
-			"scents": ["scent1", "scent2"],
-			"features": [
-				"Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-				"Vestibulum quis sodales enim.",
-				"Duis augue lorem, rutrum nec imperdiet sed, placerat sed nunc.",
-				"Sed ligula leo, convallis sit amet erat ultrices, consequat pretium metus.",
-				"Donec a elit risus."
-			]
 		}
 	]
 }
