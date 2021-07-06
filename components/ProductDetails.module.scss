@@ -51,4 +51,14 @@
 	.details {
 		grid-template-columns: 1fr;
 	}
+
+	.title {
+		margin-top: 40px;
+	}
+}
+
+@media screen and (max-width: 640px) {
+	.activeImage {
+		height: 300px;
+	}
 }

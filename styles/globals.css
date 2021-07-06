@@ -36,3 +36,13 @@ a {
 .slick-track {
 	margin-left: 0 !important;
 }
+
+@media screen and (max-width: 640px) {
+	.slick-slide {
+		height: 100px !important;
+	}
+
+	.slick-list {
+		height: 100px;
+	}
+}

@@ -1,6 +1,7 @@
-import classes from './Dropdown';
+import { Fragment } from 'react';
 import Select from 'react-select';
-import { ValueType } from 'react-select/lib/types';
+import { ValueType } from 'react-select';
+import classes from './Dropdown.module.css';
 
 type OptionType = { label: string; value: number };
 
@@ -24,14 +25,18 @@ const Dropdown: React.FC<Dropdown> = (props) => {
 	}
 
 	return (
-		<Select
-			instanceId='sizes'
-			defaultValue={options[0]}
-			onChange={(selectedOption: ValueType<OptionType>) => {
-				changeHandler(selectedOption);
-			}}
-			options={options}
-		/>
+		<Fragment>
+			<span>Size:</span>
+			<Select
+				instanceId='sizes'
+				defaultValue={options[0]}
+				onChange={(selectedOption: ValueType<OptionType>) => {
+					changeHandler(selectedOption);
+				}}
+				options={options}
+				className={classes.dropdown}
+			/>
+		</Fragment>
 	);
 };
 
