@@ -1,44 +1,75 @@
-import Dropdown from "./Dropdown";
-import Variations from "./Variations";
-import FeatureList from "./FeatureList";
-import ImageSlider from "./ImageSlider";
+import { useState } from 'react';
+import Dropdown from './Dropdown';
+import Variations from './Variations';
+import FeatureList from './FeatureList';
+import ImageSlider from './ImageSlider';
+import Image from 'next/image';
 import { default as data } from '../config/products.json';
-import classes from './ProductDetails.module.css'
+import classes from './ProductDetails.module.scss';
 
 const ProductDetails: React.FC = () => {
-    const productInfo = data.products[0];
+	const productInfo = data.products[0];
 
-    // Get a list of sizes
-    let sizes = productInfo.sizes.map(item => item.size);
+	// Get a list of sizes
+	let sizes = productInfo.sizes.map((item) => item.size);
 
-    return(
-        <div className={classes.details}>
-            <div>
-                <div className={classes.activeImage}>
-                    le slika
-                </div>
-                
-                <div className={classes.slickContainer}>
-                    <ImageSlider />
-                </div>
-            </div>
+	// Create state to display image set depending on selected size
+	const [current, setCurrent] = useState(sizes[0]);
 
-            <div>
-                <h1>{productInfo.title}</h1>
-                <p>{productInfo.short_desc}</p>
-                
-                <Dropdown sizes={sizes} />
-                <Variations variations={productInfo.scents} />
+	const sizeHandler = (size: string) => {
+		setCurrent(size);
 
-                <button>Buy Now</button>
+		const currentSizeInfo = productInfo.sizes.filter((item) => {
+			return item.size === size;
+		});
 
-                <FeatureList features={productInfo.features} />
-            </div>
+		setMainImage(currentSizeInfo[0].src[0]);
+	};
 
-            
-            
-        </div>
-    );
-}
+	// Get info for current size
+	const currentSizeInfo = productInfo.sizes.filter((item) => {
+		return item.size === current;
+	});
+
+	// Get image set for current size, set main image
+	const imageSet = currentSizeInfo[0].src;
+	const [mainImage, setMainImage] = useState(imageSet[0]);
+
+	// Change image on thumbnail click
+	const changeImageHandler = (src: string) => {
+		setMainImage(src);
+	};
+
+	return (
+		<div className={classes.details}>
+			<div>
+				<div className={classes.activeImage}>
+					<Image
+						src={mainImage}
+						layout='fill'
+						key={imageSet[0]}
+						alt={productInfo.title}
+					/>
+				</div>
+
+				<div className={classes.slickContainer}>
+					<ImageSlider imageSet={imageSet} onChange={changeImageHandler} />
+				</div>
+			</div>
+
+			<div>
+				<h1>{productInfo.title}</h1>
+				<p>{productInfo.short_desc}</p>
+
+				<Dropdown sizes={sizes} onChange={sizeHandler} />
+				<Variations variations={productInfo.scents} />
+
+				<button>Buy Now</button>
+
+				<FeatureList features={productInfo.features} />
+			</div>
+		</div>
+	);
+};
 
 export default ProductDetails;

@@ -9,10 +9,16 @@
 	width: 100%;
 	height: 500px;
 	background-color: #888;
+	position: relative;
+
+	img {
+		width: 100%;
+		height: auto;
+	}
 }
 
 .slickContainer {
-	max-width: 500px;
+	max-width: 700px;
 }
 
 @media screen and (max-width: 860px) {

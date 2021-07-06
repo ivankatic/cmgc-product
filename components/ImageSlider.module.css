@@ -1,0 +1,10 @@
+.thumb {
+	position: relative;
+	height: 100px;
+	/* width: 100px !important; */
+	display: block;
+}
+
+.slider {
+	width: 100%;
+}

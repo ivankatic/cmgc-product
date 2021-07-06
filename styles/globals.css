@@ -21,3 +21,11 @@ a {
 .slick-next:before {
 	color: black !important;
 }
+
+.slick-slide {
+	height: 150px;
+}
+
+.slick-slider {
+	height: 150px;
+}

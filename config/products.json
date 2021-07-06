@@ -7,11 +7,17 @@
 			"sizes": [
 				{
 					"size": "14",
-					"src": ["url1", "url2"]
+					"src": [
+						"https://via.placeholder.com/400/0000FF",
+						"https://via.placeholder.com/400/00FFFF"
+					]
 				},
 				{
 					"size": "28",
-					"src": ["url1", "url2"]
+					"src": [
+						"https://via.placeholder.com/400/00FFFF",
+						"https://via.placeholder.com/400/00FFFF"
+					]
 				}
 			],
 			"scents": ["scent1", "scent2"],
