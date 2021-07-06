@@ -1,0 +1,22 @@
+.details {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	column-gap: 50px;
+	padding: 50px 0;
+}
+
+.activeImage {
+	width: 100%;
+	height: 500px;
+	background-color: #888;
+}
+
+.slickContainer {
+	max-width: 500px;
+}
+
+@media screen and (max-width: 860px) {
+	.details {
+		grid-template-columns: 1fr;
+	}
+}

@@ -1,12 +1,8 @@
-const FeatureList = () => {
+const FeatureList: React.FC<{ features: string[] }> = (props) => {
     return (
-    <ul>
-        <li>feature 1</li>
-        <li>feature 1</li>
-        <li>feature 1</li>
-        <li>feature 1</li>
-        <li>feature 1</li>
-    </ul>
+        <ul>
+            {props.features.map(feature => <li key={feature}>{feature}</li>)}
+        </ul>
     );
 }
 
