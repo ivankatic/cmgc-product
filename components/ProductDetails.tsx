@@ -63,17 +63,25 @@ const ProductDetails = () => {
 			</div>
 
 			<div>
-				<h1 className={classes.title}>{productInfo.title}</h1>
-				<p className={classes.shortDesc}>{productInfo.short_desc}</p>
+				<h1 className={classes.title}>
+					{productInfo.title ? productInfo.title : 'No title'}
+				</h1>
+				<p className={classes.shortDesc}>
+					{productInfo.short_desc
+						? productInfo.short_desc
+						: 'Product has no description'}
+				</p>
 
 				<Dropdown sizes={sizes} onChange={sizeHandler} />
-				<Variations variations={productInfo.scents} />
+				{productInfo.scents && <Variations variations={productInfo.scents} />}
 
 				<button className={classes.buy} onClick={buyAlert}>
 					Buy Now
 				</button>
 
-				<FeatureList features={productInfo.features} />
+				{productInfo.features && (
+					<FeatureList features={productInfo.features} />
+				)}
 			</div>
 		</div>
 	);
